@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useMintPet } from "../hooks/useChainGotchi";
+import { safeAction } from "../lib/safeAction";
 
 export default function MintPage() {
   const [name, setName] = useState("");
-  const { write, isLoading, isSuccess, data } = useMintPet();
+  const { writeAsync, isLoading, isSuccess } = useMintPet();
 
   const handleMint = () => {
     if (name && name.length <= 20) {
-      write({ args: [name], value: BigInt(1e16) }); // 0.01 BNB in wei
+      safeAction(() => writeAsync({ args: [name], value: BigInt(1e16) }), `Pet minted: ${name}!`);
     }
   };
 
