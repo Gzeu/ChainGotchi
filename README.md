@@ -1,170 +1,70 @@
 # 🐣 ChainGotchi
 
-**BNB Chain Tamagotchi** - Evolving NFT pets with XP system, daily rewards, battles, and breeding mechanics.
+**BNB Chain Tamagotchi** — NFT pets with XP, evolution, battles, rewards & $XPET tokenomics, all deployed on BNB Smart Chain.
 
 ![ChainGotchi Banner](https://via.placeholder.com/1200x300/6366f1/ffffff?text=ChainGotchi+-+BNB+Chain+NFT+Pets)
 
-## ✨ Features
+---
 
-- 🎮 **NFT Pets**: Mint unique evolving pets as ERC721 NFTs
-- ⚡ **XP System**: Earn experience through daily activities
-- 🔄 **Evolution**: 5 stages from Egg to Master (levels 1, 5, 15, 30, 50)
-- 🍔 **Care System**: Feed and play with your pets to keep them alive
-- ⚔️ **PvP Battles**: Battle other players for rewards
-- 📊 **Stats Tracking**: Hunger, happiness, wins, losses
-- 💀 **Permadeath**: Pets die if hunger reaches 0
-- 🏆 **Leaderboards**: Compete for top rankings
+## 🚦 **Status & Roadmap (2025-11-25)**
 
-## 🛠️ Tech Stack
+### 🚀 **Status: MVP Fully Built, Expansion Beginning**
 
-**Blockchain:**
-- BNB Smart Chain (BSC)
-- Solidity ^0.8.20
-- OpenZeppelin Contracts
-- Hardhat Development Environment
+- ✅ NFT pet minting (on-chain, 0.01 BNB)
+- ✅ XP, level & evolution system (+ visual stages)
+- ✅ Hunger/happiness logic, permadeath
+- ✅ Feed/play + PvP battles (wagers & randomness)
+- ✅ XPET ($XPET, ERC20) token deployed, claimable per pet/level
+- ✅ Claim XPET from UI (with toasts, loading states)
+- ✅ Next.js 15 frontend, wallet connect (RainbowKit, MetaMask, TrustWallet)
+- ✅ Modern UI: mobile, toasts, error, skeletons, framer-motion animations
+- ✅ Documentation (setup, gameplay, deployment, tokenomics)
+- ✅ Battle, breeding, quest, tournament backend logic (WIP)
 
-**Frontend:**
-- Next.js 15 + TypeScript
-- Tailwind CSS + shadcn/ui
-- ethers.js / wagmi
-- RainbowKit (wallet connection)
 
-## 📋 Prerequisites
+### 🗺️ **What’s Next**
 
-- Node.js v18 or higher
-- MetaMask or compatible Web3 wallet
-- BNB for gas fees (testnet or mainnet)
+#### Batch 1 (Critical Improvements)
+- ReentrancyGuard, Pausable, max supply cap, gas optimizations
 
-## 🚀 Quick Start
+#### Batch 2 (Gameplay)
+- Pet revival, quest/achievements, breeding, feeding/playing in batch, multi-pet management, leaderboards, friends & referrals
 
-### 1. Clone the repository
+#### Batch 3 (Tokenomics/DeFi)
+- PancakeSwap LP for $XPET, quest+reward logic, in-game staking, item shop, governance voting, airdrop/bonus
 
-```bash
-git clone https://github.com/Gzeu/ChainGotchi.git
-cd ChainGotchi
-```
-
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Configure environment
-
-```bash
-cp .env.example .env
-# Edit .env with your private key and API keys
-```
-
-### 4. Compile contracts
-
-```bash
-npm run compile
-```
-
-### 5. Run tests
-
-```bash
-npm test
-```
-
-### 6. Deploy to BSC Testnet
-
-```bash
-# Get testnet BNB from: https://www.bnbchain.org/en/testnet-faucet
-npm run deploy:testnet
-```
-
-### 7. Verify contracts
-
-```bash
-npm run verify:testnet -- CONTRACT_ADDRESS
-```
-
-## 📖 Game Mechanics
-
-### Evolution Stages
-
-| Stage | Level | Description |
-|-------|-------|-------------|
-| 🥚 Egg | 1-4 | Newborn pet, learning basics |
-| 👶 Baby | 5-14 | Growing and exploring |
-| 🧒 Teen | 15-29 | Building strength |
-| 💪 Adult | 30-49 | Fully matured |
-| 👑 Master | 50+ | Ultimate form |
-
-### XP Earning
-
-- Daily check-in: **10 XP**
-- Feed pet: **5 XP**
-- Play mini-game: **10-50 XP**
-- Win battle: **100 XP**
-- Complete quest: **50-200 XP**
-
-### Battle System
-
-**Power Formula:**
-```
-power = (level × happiness + xp) + random(0-100)
-winner = highest power
-```
-
-## 📁 Project Structure
-
-```
-ChainGotchi/
-├── contracts/
-│   ├── ChainGotchiNFT.sol      # Main NFT contract
-│   ├── BattleArena.sol         # PvP system
-│   └── interfaces/
-├── scripts/
-│   ├── deploy.ts               # Deployment script
-│   └── verify.ts               # Verification script
-├── test/
-│   └── ChainGotchi.test.ts     # Contract tests
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   ├── hooks/
-│   └── lib/
-├── hardhat.config.ts
-└── package.json
-```
-
-## 🌐 Networks
-
-### BSC Testnet
-- **RPC URL:** https://data-seed-prebsc-1-s1.binance.org:8545/
-- **Chain ID:** 97
-- **Explorer:** https://testnet.bscscan.com
-- **Faucet:** https://www.bnbchain.org/en/testnet-faucet
-
-### BSC Mainnet
-- **RPC URL:** https://bsc-dataseed.binance.org/
-- **Chain ID:** 56
-- **Explorer:** https://bscscan.com
-
-## 🔗 Links
-
-- **Live Demo:** Coming soon
-- **Contracts (Testnet):** Coming soon
-- **Documentation:** [docs/](./docs/)
-- **Discord:** Coming soon
-- **Twitter:** Coming soon
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## ⚠️ Disclaimer
-
-This is an experimental project. Use at your own risk. Always do your own research.
+#### Batch 4 (BNB Chain Native)
+- Chainlink price oracle, TrustWallet/Binance Wallet deep integration, Greenfield storage NFTs, cross-chain bridge, marketplace listings, .bnb profile support
 
 ---
 
-**Built with ❤️ on BNB Chain**
+## 📈 **Where We Are Now**
+- 🎯 MVP on BNB Smart Chain — core experience & contracts ready
+- 🛠️ Frontend MVP = live testnet (test XPET, claim, battle, UI/UX polish)
+- 🐾 Docs for users & devs are up-to-date
+- 🌐 $XPET already ready for PancakeSwap and gaming integration
+- 🔜 Multi-phase feature & ecosystem rollouts about to begin
+
+---
+
+## ⏭️ **Next Steps** (WIP)
+- Batch up security/gameplay/defi upgrades (see roadmap)
+- Prep campaign for PancakeSwap + element.market listing/testnet farm
+- Integrate quest/achievement engine with XPET dynamics
+- Start mainnet/alpha test planning; polish docs/screenshots
+- Update README.md & docs at each major release
+
+---
+
+## 🛠️ **Setup & Deployment**
+See DEPLOY_CHECKLIST.md for quickstart/build steps, .env vars, and deploy pipeline!
+
+## 🧩 **Live Demos**
+Testnet/demo links to be released after batch deploy.
+
+## 👤 **Team & Contributions**
+Lead: @Gzeu, open to contributors. Ideas? PRs welcome. Feedback on Discord soon.
+
+---
+
+**Built for the BNB Chain - 2025 - with ❤️ and scalability!**
