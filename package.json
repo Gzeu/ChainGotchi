@@ -1,0 +1,30 @@
+{
+  "name": "chaingotchi",
+  "version": "1.0.0",
+  "description": "BNB Chain Tamagotchi - Evolving NFT pets with XP system",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network bscTestnet",
+    "deploy:mainnet": "hardhat run scripts/deploy.ts --network bscMainnet",
+    "verify:testnet": "hardhat verify --network bscTestnet",
+    "dev": "cd frontend && npm run dev"
+  },
+  "keywords": ["blockchain", "nft", "gaming", "bnb", "tamagotchi"],
+  "author": "Gzeu",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
+    "hardhat": "^2.19.4",
+    "@typechain/hardhat": "^9.1.0",
+    "@typechain/ethers-v6": "^0.5.1",
+    "typechain": "^8.3.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.1",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.10.0"
+  }
+}
